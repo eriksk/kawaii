@@ -1,4 +1,6 @@
-module Kawaii
-  # TODO: put helper functions here so that Kawaii::to_radiens ex. will work. looks nice.,
-  
-end
+require_relative 'kawaii/content_manager'
+require_relative 'kawaii/entity'
+require_relative 'kawaii/game'
+require_relative 'kawaii/node'
+require_relative 'kawaii/node_manager'
+require_relative 'kawaii/vector2'

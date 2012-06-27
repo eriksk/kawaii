@@ -1,5 +1,4 @@
-require_relative 'kawaii/kawaii.rb'
-require_relative 'kawaii/game.rb'
+require_relative 'lib/kawaii.rb'
 
 class Game < Kawaii::Game
   
@@ -12,7 +11,7 @@ class Game < Kawaii::Game
   end
   
   def update
-    super.update
+    
     
   end
   
