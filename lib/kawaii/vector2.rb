@@ -3,11 +3,7 @@ module Kawaii
   
     attr_accessor :x, :y
   
-    def initialize
-      @x, @y = 0, 0
-    end
-  
-    def initialize x, y
+    def initialize x = 0, y = 0
       @x, @y = x, y
     end
   

@@ -10,9 +10,18 @@ module Kawaii
       @root = root
       @images = {}
     end
+    
+    def clear
+      @images.clear
+    end
   
-    def load_image(path)
-      images[path] = Gosu::Image.new(@window, @root + path, false) # TODO: tileable images
+    # loads an image and caches it for further use
+    # if an image has been loaded it is just being returned
+    def load_image(path, tileable = false)
+      if !@images[path]
+        @images[path] = Gosu::Image.new(@window, "#{@root}/#{path}", tileable)
+      end
+      @images[path]
     end
   end
 end
