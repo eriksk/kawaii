@@ -34,9 +34,10 @@ module Kawaii
       puts "Nodes: #{node_manager.count}"
     end
     
-    def super_update
+    def update
       @dt = delta()
       @node_manager.update @dt
+      update_game
     end
   
     def delta

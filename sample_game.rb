@@ -30,9 +30,8 @@ class Game < Kawaii::Game
     end
   end
 
-  def update
+  def update_game
     input    
-    super_update
   end
 end
 

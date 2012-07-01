@@ -11,8 +11,7 @@ class Game < Kawaii::Game
     super WIDTH, HEIGHT, FULLSCREEN, CONTENT_ROOT
   end
   
-  def update
-    super_update
+  def update_game dt
     if button_down?Gosu::KbEscape
       exit
     end  

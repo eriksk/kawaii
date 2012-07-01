@@ -10,10 +10,13 @@ module Kawaii
       @flipped_v, @flipped_h = false, false
       @texture = texture
     end
-    
-    def update dt
+  
+    def before_update
     end
-
+  
+    def after_update
+    end
+  
     def draw
       @texture.draw_rot(self.position.x, self.position.y, 0, 0) # TODO: rotation
     end

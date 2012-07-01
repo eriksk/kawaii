@@ -1,13 +1,15 @@
 
 module Kawaii
   class Node
-    attr_accessor :position, :velocity, :rotation, :children
+    attr_accessor :position, :velocity, :rotation, :gravity, :static, :children
   
-    def initialize
+    def initialize static = false
       @children = []
       @rotation = 0.0
       @position = Kawaii::Vector2.new
       @velocity = Kawaii::Vector2.new
+      @gravity = Kawaii::Vector2.new(0, Kawaii::GRAVITY)
+      @static = static
     end
     
     def count
@@ -31,10 +33,22 @@ module Kawaii
     end
   
     def update dt
-      @position.x += @velocity.x * dt
-      @position.y += @velocity.y * dt
-      @children.each do |child|
-        child.update dt
+      if self.class.method_defined? :before_update
+        before_update
+      end
+
+      if !@static
+        @velocity.x += @gravity.x * dt
+        @velocity.y += @gravity.y * dt
+        @position.x += @velocity.x * dt
+        @position.y += @velocity.y * dt
+        @children.each do |child|
+          child.update dt
+        end
+      end
+   
+      if self.class.method_defined? :after_update
+        after_update
       end
     end
   
