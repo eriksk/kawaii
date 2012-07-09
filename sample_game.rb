@@ -25,7 +25,7 @@ class Game < Kawaii::Game
   end
   
   def input
-    if button_down?Gosu::KbEscape
+    if button_down? Gosu::KbEscape
       exit
     end
   end

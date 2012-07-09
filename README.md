@@ -23,5 +23,8 @@ Aside from being totally cute (hence the name) it will have:
 * Helper functions/math
 * Lots of tweenings & other juicyness
 
+##  Dependencies
+gosu '0.7.43'
+
 ## Licence?
 MIT
