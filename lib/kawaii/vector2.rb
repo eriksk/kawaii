@@ -7,14 +7,16 @@ module Kawaii
       @x, @y = x, y
     end
   
-    # TODO: helpers
     def normalize
+      # TODO: helpers
     end
   
     def length
+      Math::sqrt(x * y)
     end
   
     def direction
+      Math::atan2(y, x)
     end
   end   
 end

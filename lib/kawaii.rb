@@ -1,9 +1,9 @@
-require_relative 'kawaii/content_manager'
-require_relative 'kawaii/entity'
-require_relative 'kawaii/game'
-require_relative 'kawaii/node'
-require_relative 'kawaii/node_manager'
-require_relative 'kawaii/vector2'
+require 'kawaii/content_manager'
+require 'kawaii/entity'
+require 'kawaii/game'
+require 'kawaii/node'
+require 'kawaii/node_manager'
+require 'kawaii/vector2'
 
 module Kawaii
   

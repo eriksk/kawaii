@@ -3,7 +3,7 @@ require_relative 'node'
 module Kawaii
   class Entity < Kawaii::Node
   
-    attr_accessor :flipped_h, :flipped_v
+    attr_accessor :flipped_h, :flipped_v, :texture
   
     def initialize texture
       super()

@@ -3,29 +3,29 @@ module Kawaii
   class Node
     attr_accessor :position, :velocity, :rotation, :gravity, :static, :children
   
-    def initialize static = false
+    def initialize static = false, position = Vector2.new, velocity = Vector2.new, gravity = Kawaii::Vector2.new(0, Kawaii::GRAVITY)
       @children = []
       @rotation = 0.0
-      @position = Kawaii::Vector2.new
-      @velocity = Kawaii::Vector2.new
-      @gravity = Kawaii::Vector2.new(0, Kawaii::GRAVITY)
+      @position = position
+      @velocity = velocity
+      @gravity = gravity
       @static = static
     end
     
     def count
       sum = 1
       @children.each do |child|
-        child.count 
+        sum += child.count 
       end
       sum
     end
   
-    def add_node node
+    def add_child node
       @children.push(node)
     end
   
-    def remove_node node
-      @children.remove(node)
+    def remove_child node
+      @children.delete(node)
     end
   
     def has_children?
