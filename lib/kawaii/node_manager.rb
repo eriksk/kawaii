@@ -4,8 +4,7 @@ module Kawaii
   
     attr_accessor :nodes
   
-    def initialize game
-      @game = game
+    def initialize
       @nodes = []
     end
     
@@ -17,12 +16,12 @@ module Kawaii
       sum
     end
     
-    def add_node node
+    def add node
       nodes.push node
     end
     
-    def remove_node node
-      nodes.remove node
+    def remove node
+      nodes.delete node
     end
     
     def update dt
@@ -36,8 +35,6 @@ module Kawaii
         node.draw
       end
     end
-  
-    # TODO: settings in this class, like gravity and stuff. ? maybe individual node gravity? just a vector! could be cool.
   
     def clear
       nodes.clear
