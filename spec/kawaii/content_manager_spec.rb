@@ -4,13 +4,13 @@ module Kawaii
 	describe ContentManager do
 		before(:each) do
 			@img_name = "gfx/ball.png"
-			@root = "content"
+			@root = "/Users/ILab/Documents/ruby/kawaii/spec/kawaii/content"
 			window = Gosu::Window.new(800, 600, false)
 			@content =  ContentManager.new(window, @root)
 		end
 
 		it "should set root directory" do
-			@content.root.should == "content"
+			@content.root.should == @root
 		end
 
 		it "should load an image" do

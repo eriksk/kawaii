@@ -18,6 +18,9 @@ module Kawaii
 		it "should contain a cell_size" do
 			@tile_map.should respond_to :cell_size
 		end
+		it "should contain a texture" do
+			@tile_map.should respond_to :texture
+		end
 		it "should have a cell_size larger than zero" do
 			@tile_map.cell_size.should > 0  
 		end
@@ -33,7 +36,7 @@ module Kawaii
 		end
 
 		describe "#load" do
-			it "should be able to load a tmx xml file" do
+			it "should be able to load a tmx.xml file" do
 				@tile_map.load('path/to/tmx.xml')
 				@tile_map.width.should == 32
 				@tile_map.height.should == 32

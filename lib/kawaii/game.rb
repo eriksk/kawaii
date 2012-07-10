@@ -8,8 +8,14 @@ module Kawaii
     def initialize width, height, fullscreen, content_root
       super width, height, fullscreen
       @width, @height, @fullscreen = width, height, fullscreen    
+      
+      # managers
       @node_manager = Kawaii::NodeManager.new(self)
       @content_manager = Kawaii::ContentManager.new(self, content_root)  
+      @audio_manager = Kawaii::AudioManager.new(self)
+      @input_manager
+
+      # stats
       @top_color = Gosu::Color.new(0xFF1EB1FA)
       @bottom_color = Gosu::Color.new(0xFF1D4DB5)
       @font = Gosu::Font.new(self, Gosu::default_font_name, 18)
@@ -19,6 +25,7 @@ module Kawaii
       puts "\tResolution: #{width}:#{height}"
       puts "\tFullscreen: #{fullscreen}"
       puts "\tContent root: #{content_root}"
+      print_stats
     end
     
     def add_node node
