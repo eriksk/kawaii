@@ -18,6 +18,7 @@ module Kawaii
     end
   
     def draw
+      # TODO: draw flipped v & h
       @texture.draw_rot(self.position.x, self.position.y, 0, 0) # TODO: rotation
     end
   end            

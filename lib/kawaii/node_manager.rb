@@ -16,14 +16,6 @@ module Kawaii
       sum
     end
     
-    def add node
-      nodes.push node
-    end
-    
-    def remove node
-      nodes.delete node
-    end
-    
     def update dt
       nodes.each do |node|
         node.update dt

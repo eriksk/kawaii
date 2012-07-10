@@ -4,6 +4,7 @@ require 'kawaii/game'
 require 'kawaii/node'
 require 'kawaii/node_manager'
 require 'kawaii/vector2'
+require 'kawaii/text_field'
 
 module Kawaii
   

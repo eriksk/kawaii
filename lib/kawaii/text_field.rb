@@ -4,7 +4,7 @@ module Kawaii
   class TextField
     attr_accessor :font, :text, :position
     
-    def initialize font, position = Kawaii::Vector2.new, text = ""
+    def initialize font = nil, position = Kawaii::Vector2.new, text = ""
     # TODO: complete
       @font, @position, @text = font, position, text
     end
