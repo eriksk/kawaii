@@ -5,6 +5,8 @@ require 'kawaii/node'
 require 'kawaii/node_manager'
 require 'kawaii/vector2'
 require 'kawaii/text_field'
+require 'kawaii/audio_manager'
+require 'kawaii/input_manager'
 
 module Kawaii
   
