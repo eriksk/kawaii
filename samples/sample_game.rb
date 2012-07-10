@@ -1,4 +1,4 @@
-require_relative 'lib/kawaii.rb'
+require 'kawaii'
 
 class Game < Kawaii::Game
   
