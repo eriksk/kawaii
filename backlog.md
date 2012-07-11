@@ -6,7 +6,9 @@
 * Input
 * Audio
 * Animated entities/sprites
+* Tweenings & juice
 * Vectors/Math
+* Make a super cute awesome kawaii logo
 
 ## Working on
 * Content manager

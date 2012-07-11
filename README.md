@@ -17,6 +17,9 @@ To run the game just run the command:
 
 This is NOT implemented yet though...
 
+## Why does Kawaii exist?
+I wanted a way of quickly prototyping games for iPhone and iPad without Objective-C. Being pretty comfy with Ruby, I thought, why not!? 
+
 ## Will this be distributed as a gem?
 Yes, sooner or later.
 
