@@ -1,4 +1,4 @@
-# Kawaii
+# Kawaii <3
 
 [Feature list and development progress](https://github.com/eriksk/kawaii/blob/master/backlog.md)
 
@@ -22,6 +22,7 @@ Yes, sooner or later.
 
 ## What kind of features will it have?
 Aside from being totally cute (hence the name) it will have:
+* Integrated physics with [chipmunk](https://github.com/beoran/chipmunk)
 * Content management
 	* Sharing sprites with nodes
 	* Tiling made easy
@@ -35,7 +36,8 @@ Aside from being totally cute (hence the name) it will have:
 	* Imports maps from Tiled and draws them
 
 ##  Dependencies
-gosu '0.7.43'
+[gosu '0.7.43'](https://github.com/jlnr/gosu)
+[chipmunk](https://github.com/beoran/chipmunk)
 
 ## Licence?
 MIT
