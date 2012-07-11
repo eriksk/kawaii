@@ -6,6 +6,7 @@
 * Input
 * Audio
 * Animated entities/sprites
+* Vectors/Math
 
 ## Working on
 * Content manager

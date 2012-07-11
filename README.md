@@ -1,5 +1,7 @@
 # Kawaii
 
+[Feature list and development progress](https://github.com/eriksk/kawaii/blob/master/backlog.md)
+
 ## What is Kawaii?
 Kawaii is a tiny game library for ruby built on top of gosu. It makes it quick and easy to create 2D games.
 
