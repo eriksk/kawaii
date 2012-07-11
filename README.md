@@ -36,8 +36,8 @@ Aside from being totally cute (hence the name) it will have:
 	* Imports maps from Tiled and draws them
 
 ##  Dependencies
-[gosu '0.7.43'](https://github.com/jlnr/gosu)
-[chipmunk](https://github.com/beoran/chipmunk)
+* [gosu '0.7.43'](https://github.com/jlnr/gosu)
+* [chipmunk](https://github.com/beoran/chipmunk)
 
 ## Licence?
 MIT
