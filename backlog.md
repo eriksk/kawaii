@@ -11,6 +11,8 @@
 
 ## Completed
 * Tiled importer
+	* JSON importer
+	* <del>XML importer</del>
 * Basic game
 * Node graph
 * Entity management

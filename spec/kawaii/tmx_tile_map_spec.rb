@@ -27,9 +27,10 @@ module Kawaii
 				@tile_map.load('/Users/ILab/Documents/ruby/kawaii/spec/kawaii/content/maps/test_map.json')
 				@tile_map.width.should == 32
 				@tile_map.height.should == 32
+				@tile_map.layers.size.should be(1)
 			end
 
-			it "should only load xml or json" do
+			it "should only load json" do
 				lambda {@tile_map.load('test/file.yml')}.should raise_error(UnsupportedFormatError) 
 			end
 		end

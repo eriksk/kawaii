@@ -17,5 +17,14 @@ module Kawaii
 		def get_cell col, row
 			@data[col + row * @width]
 		end
+
+		def to_s
+			puts "Name: #{name}"
+			puts "Opacity: #{opacity}"
+			puts "Width: #{width}"
+			puts "Height: #{height}"
+			puts "X: #{x}"
+			puts "Y: #{y}"
+		end
 	end
 end

@@ -16,10 +16,27 @@ module Kawaii
 		def load path
 			if path.end_with? ".json"
 				load_json path
-			elsif path.end_with? ".xml"
-				load_xml path
 			else
-				raise UnsupportedFormatError, "only json and xml allowed"
+				raise UnsupportedFormatError, "only json is supported"
+			end
+		end
+
+		def to_s
+			puts "Width: #{@width}"
+			puts "Height: #{@height}"
+			puts "Orientation: #{@orientation}"
+			puts "Tile width: #{@tile_width}"
+			puts "Tile height: #{@tile_height}"
+			puts ""
+			puts "Properties"
+			properties.each do |k, v|
+				puts "Key: #{k}, Value: #{v}"
+			end
+
+			puts ""
+			puts "Layers: "
+			@layers.each do |l|
+				puts l.to_s
 			end
 		end
 
@@ -27,12 +44,6 @@ module Kawaii
 			def load_json path
 				File.open(path) do |f|
 					populate JSON.parse(f.read)
-				end
-			end
-
-			def load_xml path
-				File.open(path) do |f|
-					populate XMl.parse(f.read)
 				end
 			end
 
