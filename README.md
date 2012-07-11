@@ -22,6 +22,8 @@ Aside from being totally cute (hence the name) it will have:
 * Input management
 * Helper functions/math
 * Lots of tweenings & other juicyness
+* Tiled importer (xml & json)
+	* Imports maps from Tiled and draws them
 
 ##  Dependencies
 gosu '0.7.43'

@@ -8,6 +8,8 @@ require 'kawaii/text_field'
 require 'kawaii/audio_manager'
 require 'kawaii/input_manager'
 require 'kawaii/tmx_tile_map'
+require 'kawaii/tmx_layer'
+require 'kawaii/errors'
 
 module Kawaii
   GRAVITY = 0.00098

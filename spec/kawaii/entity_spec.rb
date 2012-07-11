@@ -2,7 +2,6 @@ require 'spec_helper'
 
 module Kawaii
 	describe Entity do
-
 		before(:each) do 
 			@entity = Entity.new nil
 		end
