@@ -5,12 +5,12 @@ module Kawaii
   
     attr_accessor :width, :height, :fullscreen, :show_fps, :font, :node_manager, :content_manager
   
-    def initialize width, height, fullscreen, content_root
+    def initialize width, height, fullscreen, content_root, debug = true
       super width, height, fullscreen
       @width, @height, @fullscreen = width, height, fullscreen    
       
       # managers
-      @node_manager = Kawaii::NodeManager.new(self)
+      @node_manager = Kawaii::NodeManager.new
       @content_manager = Kawaii::ContentManager.new(self, content_root)  
       @audio_manager = Kawaii::AudioManager.new(self)
       @input_manager
@@ -19,20 +19,22 @@ module Kawaii
       @top_color = Gosu::Color.new(0xFF1EB1FA)
       @bottom_color = Gosu::Color.new(0xFF1D4DB5)
       @font = Gosu::Font.new(self, Gosu::default_font_name, 18)
-      @show_fps = true
+      @debug = debug
       
-      puts "Starting game with settings:"
-      puts "\tResolution: #{width}:#{height}"
-      puts "\tFullscreen: #{fullscreen}"
-      puts "\tContent root: #{content_root}"
-      print_stats
+      if @debug
+        puts "Game settings:"
+        puts "\tResolution: #{width}:#{height}"
+        puts "\tFullscreen: #{fullscreen}"
+        puts "\tContent root: #{content_root}"
+        print_stats
+      end
     end
     
-    def add_node node
+    def add_child node
       @node_manager.add_node node
     end
     
-    def remove_node node
+    def remove_child node
       @node_manager.remove_node node
     end
     
@@ -52,7 +54,7 @@ module Kawaii
     end
     
     def get_fps
-      "60" # TODO: real fps, fix delta
+      1000.0 / delta
     end
   
     def draw
@@ -63,7 +65,7 @@ module Kawaii
         0, @height, @bottom_color,
       )
       @node_manager.draw
-      if @show_fps
+      if @debug
         @font.draw("FPS: #{get_fps}", 14, 14, 0)
       end
     end 

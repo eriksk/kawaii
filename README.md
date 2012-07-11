@@ -1,13 +1,19 @@
-# <3 Kawaii <3
+# Kawaii
 
 ## What is Kawaii?
 Kawaii is a tiny game library for ruby built on top of gosu. It makes it quick and easy to create 2D games.
 
-## How does it work?
-It doesn't work yet... But it will, soon!
+## How do I use it?
+I will show this soon... in the mean time, this is what I'm aiming for.
 
-## Why doesn't it work yet?
-Give me a break I started working on this 2012-06-27! Geez!
+	kawaii new MyAwesomeGame 800 600
+
+This will create a new game named "MyAwesomeGame" with a default resolution set to 800 x 600.
+To run the game just run the command:
+	
+	ruby my_awesome_game.rb
+
+This is NOT implemented yet though...
 
 ## Will this be distributed as a gem?
 Yes, sooner or later.
@@ -17,6 +23,7 @@ Aside from being totally cute (hence the name) it will have:
 * Content management
 	* Sharing sprites with nodes
 	* Tiling made easy
+* Animated sprites
 * Node management, a tree of nodes can be easily created and managed.
 * Menu system
 * Input management

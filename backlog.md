@@ -5,6 +5,7 @@
 * Physics integration w/ chipmunk
 * Input
 * Audio
+* Animated entities/sprites
 
 ## Working on
 * Content manager
