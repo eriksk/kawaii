@@ -14,6 +14,8 @@ require 'kawaii/errors'
 require 'kawaii/physics_entity'
 require 'kawaii/physics_manager'
 require 'kawaii/constants'
+require 'kawaii/scene_manager'
+require 'kawaii/scene'
 
 module Kawaii
 end
