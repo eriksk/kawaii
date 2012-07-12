@@ -5,6 +5,7 @@ module Kawaii
 		before(:each) do 
 			@circle = PhysicsEntity.new :circle, {:radius => 16}
 			@rectangle = PhysicsEntity.new :rectangle, { :width => 32, :height => 64}
+			@physix = PhysicsManager.new
 		end
 
 		describe "properties" do
@@ -18,7 +19,18 @@ module Kawaii
 				@circle.should respond_to :geom
 			end
 			it "should be either a circle or a rectangle" do
+				@circle.geom.should be(:circle)
+				@rectangle.geom.should be(:rectangle)
+			end
+		end
 
+		describe "physics integration" do
+			it "should be able to add itself to a cp physics space" do
+				@circle.add_to_space @physix.space
+			end
+
+			it "should be able to remove itself from the cp physics space" do
+				@circle.remove_from_space @physix.space
 			end
 		end
 	end

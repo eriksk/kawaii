@@ -13,6 +13,13 @@ module Kawaii
 			end
 		end
 
+		def add_to_space chipmunk_space
+			# TODO:
+		end
+
+		def remove_from_space chipmunk_space
+		end
+
 		protected
 			def create_circle radius
 				puts "Creating circle with r:#{radius}"

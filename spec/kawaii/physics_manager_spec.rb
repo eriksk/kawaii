@@ -30,6 +30,13 @@ module Kawaii
 					@phys_man.add_physics_entity(PhysicsEntity.new :circle, {:radius => 16})	
 					@phys_man.entities.size.should be(1)
 				end
+
+				it "should remove physics entities" do
+					entity = PhysicsEntity.new :circle, {:radius => 16}
+					@phys_man.add_physics_entity(entity)	
+					@phys_man.remove_physics_entity(entity)
+					@phys_man.entities.size.should be(0)
+				end
 			end
 		end
 	end
