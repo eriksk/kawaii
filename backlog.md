@@ -2,17 +2,16 @@
 
 ## Next up
 * Tiled maps usage
-* Physics integration w/ chipmunk
+* Animated entities/sprites
 * Input
 * Audio
-* Animated entities/sprites
 * Tweenings & juice
 * Vectors/Math
 * Make a super cute awesome kawaii logo
 * gem commands
 
 ## Working on
-* Content manager
+* Physics integration w/ chipmunk
 
 ## Completed
 * Tiled importer
@@ -21,3 +20,4 @@
 * Basic game
 * Node graph
 * Entity management
+* Content manager

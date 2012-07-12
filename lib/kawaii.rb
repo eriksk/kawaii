@@ -11,6 +11,7 @@ require 'kawaii/input_manager'
 require 'kawaii/tmx_tile_map'
 require 'kawaii/tmx_layer'
 require 'kawaii/errors'
+require 'kawaii/physics_entity'
 
 module Kawaii
   GRAVITY = 0.00098
