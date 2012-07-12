@@ -12,7 +12,6 @@
 
 ## Working on
 * <del>Physics integration w/ chipmunk</del> (paused, need more graphics to test)
-* Input
 
 ## Completed
 * Tiled importer
@@ -23,3 +22,4 @@
 * Entity management
 * Content manager
 * Scene management
+* Input
