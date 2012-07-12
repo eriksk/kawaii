@@ -1,6 +1,5 @@
 Gem::Specification.new do |s|
   s.name = "kawaii"
-  s.version = "0.1.0"
   s.date = %q[2012-07-11]
   s.authors = ["Erik Skoglund"]
   s.email = "erikskoglund88@gmail.com"
@@ -12,4 +11,8 @@ Gem::Specification.new do |s|
   s.default_executable = "hello"
   s.add_dependency('gosu') # TODO: version
   # TODO: chipmunk, version => ""
+
+  s.test_files    = s.files.grep(%r{^(test|spec|features)/})
+  s.require_paths = ["lib"]
+  s.version       = Kawaii::VERSION
 end
