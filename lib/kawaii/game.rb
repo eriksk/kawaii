@@ -5,7 +5,7 @@ module Kawaii
   
     attr_accessor :width, :height, :fullscreen, :show_fps, :font, :node_manager, :content_manager, :physics_manager
   
-    def initialize width, height, fullscreen, content_root, debug = true
+    def initialize width = 800, height = 600, fullscreen = false, content_root = "content", debug = true
       super width, height, fullscreen
       @width, @height, @fullscreen = width, height, fullscreen    
       

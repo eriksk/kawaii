@@ -17,7 +17,7 @@
 ## Completed
 * Tiled importer
 	* JSON importer
-	* <del>XML importer</del>
+	* <del>XML importer</del> (removed, don't want more dependencies. Besides, json works just fine)
 * Basic game
 * Node graph
 * Entity management
