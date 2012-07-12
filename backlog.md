@@ -5,13 +5,15 @@
 * Animated entities/sprites
 * Input
 * Audio
+* Tweenings & juice
 * Vectors/Math
 * Make a super cute awesome kawaii logo
 * gem commands
+* Platform example game
 
 ## Working on
-* Tweenings & juice
-* Physics integration w/ chipmunk
+* <del>Physics integration w/ chipmunk</del> (paused, need more graphics to test)
+* Scene management
 
 ## Completed
 * Tiled importer
