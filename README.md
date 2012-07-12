@@ -40,7 +40,7 @@ Aside from being totally cute (hence the name) it will have:
 
 ##  Dependencies
 * [gosu '0.7.43'](https://github.com/jlnr/gosu)
-* [chipmunk](https://github.com/beoran/chipmunk)
+* [chipmunk '5.3.4.5'](https://github.com/beoran/chipmunk)
 
 ## Licence?
 MIT

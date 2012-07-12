@@ -13,5 +13,11 @@ module Kawaii
 		it "should be able to remove children" do
 			@game.should respond_to :remove_child
 		end
+
+		describe "properties" do
+			it "should contain a physics manager" do
+				@game.should respond_to :physics_manager
+			end
+		end
 	end
 end

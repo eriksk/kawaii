@@ -11,7 +11,6 @@ module Kawaii
 		end
 
 		def add_physics_entity entity
-			# TODO: add to space
 			if entity.class == PhysicsEntity
 				@entities.push entity
 				entity.add_to_space @space

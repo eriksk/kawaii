@@ -1,3 +1,5 @@
+require 'chipmunk'
+
 module Kawaii
 	class PhysicsEntity < Entity
 		
@@ -14,7 +16,7 @@ module Kawaii
 		end
 
 		def add_to_space chipmunk_space
-			# TODO:
+			# TODO: check if body is static etc...
 		end
 
 		def remove_from_space chipmunk_space
@@ -22,11 +24,9 @@ module Kawaii
 
 		protected
 			def create_circle radius
-				puts "Creating circle with r:#{radius}"
 			end
 
 			def create_rectangle width, height
-				puts "Creating rectangle with w:#{width} and h:#{height}"
 			end
 	end
 end

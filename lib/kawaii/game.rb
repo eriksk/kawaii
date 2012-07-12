@@ -3,7 +3,7 @@ require 'gosu'
 module Kawaii
   class Game < Gosu::Window
   
-    attr_accessor :width, :height, :fullscreen, :show_fps, :font, :node_manager, :content_manager
+    attr_accessor :width, :height, :fullscreen, :show_fps, :font, :node_manager, :content_manager, :physics_manager
   
     def initialize width, height, fullscreen, content_root, debug = true
       super width, height, fullscreen
@@ -13,7 +13,8 @@ module Kawaii
       @node_manager = Kawaii::NodeManager.new
       @content_manager = Kawaii::ContentManager.new(self, content_root)  
       @audio_manager = Kawaii::AudioManager.new(self)
-      @input_manager
+      @input_manager = Kawaii::InputManager.new(self)
+      @physics_manager = Kawaii::PhysicsManager.new
 
       # stats
       @top_color = Gosu::Color.new(0xFF1EB1FA)
