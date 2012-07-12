@@ -9,6 +9,7 @@
 * Tweenings & juice
 * Vectors/Math
 * Make a super cute awesome kawaii logo
+* gem commands
 
 ## Working on
 * Content manager

@@ -1,3 +1,4 @@
+require 'kawaii/version'
 require 'kawaii/content_manager'
 require 'kawaii/entity'
 require 'kawaii/game'

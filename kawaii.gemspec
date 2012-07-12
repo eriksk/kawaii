@@ -1,17 +1,27 @@
-Gem::Specification.new do |s|
-  s.version = Kawaii::VERSION
-  s.name = "kawaii"
-  s.date = %q[2012-07-11]
-  s.authors = ["Erik Skoglund"]
-  s.email = "erikskoglund88@gmail.com"
-  s.summary = "game library that extends gosu"
-  s.homepage = "https://github.com/eriksk/kawaii"
-  s.description = "kawaii provides a tiny game library that extends gosu"
-  s.files = `git ls-files`.split($\)
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
-  s.default_executable = "hello"
-  s.add_dependency('gosu', '>= 0.7.43')
-  s.add_dependency('chipmunk', '>= 5.3.4.5')
-  s.test_files    = s.files.grep(%r{^(test|spec|features)/})
-  s.require_paths = ["lib"]
+$:.push File.expand_path("../lib", __FILE__)
+require 'kawaii/version'
+
+Gem::Specification.new do |gem|  
+  gem.version = Kawaii::VERSION
+
+  gem.name = "kawaii"
+  gem.date = %q[2012-07-11]
+  gem.authors = ["Erik Skoglund"]
+  gem.platform = Gem::Platform::RUBY
+  gem.email = "erikskoglund88@gmail.com"
+  gem.summary = "game library that extends gosu"
+  gem.homepage = "https://github.com/eriksk/kawaii"
+  gem.description = "kawaii provides a tiny game library that extends gosu"
+  
+  gem.files = `git ls-files`.split($\)
+  gem.test_files = gem.files.grep(%r{^(test|spec|features)/})
+  gem.require_paths = ["lib"]
+  
+  gem.executables = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  
+  gem.default_executable = 'kawaii'
+  
+  gem.add_dependency('gosu', '>= 0.7.43')
+  gem.add_dependency('chipmunk', '>= 5.3.4.5')
+  gem.add_development_dependency('rspec')
 end
