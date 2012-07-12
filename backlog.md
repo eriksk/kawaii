@@ -3,7 +3,6 @@
 ## Next up
 * Tiled maps usage
 * Animated entities/sprites
-* Input
 * Audio
 * Tweenings & juice
 * Vectors/Math
@@ -13,7 +12,7 @@
 
 ## Working on
 * <del>Physics integration w/ chipmunk</del> (paused, need more graphics to test)
-* Scene management
+* Input
 
 ## Completed
 * Tiled importer
@@ -23,3 +22,4 @@
 * Node graph
 * Entity management
 * Content manager
+* Scene management
