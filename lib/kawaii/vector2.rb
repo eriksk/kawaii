@@ -8,11 +8,15 @@ module Kawaii
     end
   
     def normalize
-      # TODO: helpers
+      length = Math::sqrt((@x * @x) + (@y * @y))
+      if (length != 0)
+          @x = @x / length
+          @y = @y / length
+      end
     end
   
     def length
-      Math::sqrt(x * y)
+      Math::sqrt((@x * @x) + (@y * @y))
     end
   
     def direction
