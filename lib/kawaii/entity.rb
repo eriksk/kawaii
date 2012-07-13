@@ -11,10 +11,10 @@ module Kawaii
       @texture = texture
     end
   
-    def before_update
+    def before_update dt
     end
   
-    def after_update
+    def after_update dt
     end
   
     def draw

@@ -23,5 +23,12 @@ module Kawaii
       end
       @images[path]
     end
+
+    def load_tiled_images(path, cell_size)
+      if !@images[path]
+        @images[path] = Gosu::Image.load_tiles(@window, "#{@root}/#{path}", cell_size, cell_size, true)
+      end
+      @images[path]
+    end
   end
 end

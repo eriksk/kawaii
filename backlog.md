@@ -1,7 +1,7 @@
 # Kawaii backlog
 
 ## Next up
-* Tiled maps usage
+* Camera
 * Animated entities/sprites
 * Audio
 * Tweenings & juice
@@ -23,3 +23,4 @@
 * Content manager
 * Scene management
 * Input
+* Tiled maps usage

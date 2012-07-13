@@ -34,7 +34,7 @@ module Kawaii
   
     def update dt
       if self.class.method_defined? :before_update
-        before_update
+        before_update dt
       end
 
       if !@static
@@ -48,7 +48,7 @@ module Kawaii
       end
    
       if self.class.method_defined? :after_update
-        after_update
+        after_update dt
       end
     end
   

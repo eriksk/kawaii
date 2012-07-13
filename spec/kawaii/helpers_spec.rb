@@ -24,7 +24,7 @@ module Kawaii
 				line[key] += "-"
 			end
 			line.each do |k, v|
-				puts v
+				# puts v
 			end
 		end
 	end

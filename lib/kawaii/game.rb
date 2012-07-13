@@ -32,11 +32,11 @@ module Kawaii
     end
     
     def add_child node
-      @node_manager.add_node node
+      @node_manager.nodes.push node
     end
     
     def remove_child node
-      @node_manager.remove_node node
+      @node_manager.nodes.delete node
     end
     
     def print_stats
@@ -58,6 +58,12 @@ module Kawaii
       1000.0 / delta
     end
   
+    def before_draw
+    end
+
+    def after_draw
+    end
+
     def draw
       draw_quad(
         0, 0, @top_color,
@@ -65,10 +71,12 @@ module Kawaii
         @width, @height, @bottom_color,
         0, @height, @bottom_color,
       )
+      before_draw
       @node_manager.draw
       if @debug
         @font.draw("FPS: #{get_fps}", 14, 14, 0)
       end
+      after_draw
     end 
   end
 end

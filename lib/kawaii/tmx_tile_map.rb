@@ -11,11 +11,17 @@ module Kawaii
 		end
 
 		def draw
+			@layers.each do |layer|
+				layer.draw
+			end
 		end
 
-		def load path
+		def load path, content_manager
 			if path.end_with? ".json"
 				load_json path
+				@layers.each do |layer|
+					layer.textures = content_manager.load_tiled_images("gfx/map1.png", 32)
+				end
 			else
 				raise UnsupportedFormatError, "only json is supported"
 			end
