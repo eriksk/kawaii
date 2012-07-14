@@ -6,37 +6,28 @@
 Kawaii is a tiny game library for ruby built on top of gosu. It makes it quick and easy to create 2D games.
 
 ## How do I use it?
-I will show this soon... in the mean time, this is what I'm aiming for.
+To create a basic kawaii game, just install the gem
 
-	kawaii new MyAwesomeGame 800 600
+	gem install kawaii
 
-This will create a new game named "MyAwesomeGame" with a default resolution set to 800 x 600.
-To run the game just run the command:
-	
-	ruby my_awesome_game.rb
+And then run the following command
 
-This is NOT implemented yet though...
+	kawaii new mysuperawesomefirstgame
+
+This will create a new basic game with a default resolution set to 800 x 600.
 
 ## Why does Kawaii exist?
 I wanted a way of quickly prototyping games for iPhone and iPad without Objective-C. Being pretty comfy with Ruby, I thought, why not!? 
 
 ## Will this be distributed as a gem?
-Yes, sooner or later.
+It is! Just run this command to install it!
+
+	gem install kawaii
 
 ## What kind of features will it have?
-Aside from being totally cute (hence the name) it will have:
-* Integrated physics with [chipmunk](https://github.com/beoran/chipmunk)
-* Content management
-	* Sharing sprites with nodes
-	* Tiling made easy
-* Animated sprites
-* Node management, a tree of nodes can be easily created and managed.
-* Menu system
-* Input management
-* Helper functions/math
-* Lots of tweenings & other juicyness
-* Tiled importer (<del>xml</del> & json)
-	* Imports maps from Tiled and draws them
+A lot! Check out the full list of implemented & to be implemented features 
+
+[Feature list and development progress](https://github.com/eriksk/kawaii/blob/master/backlog.md)
 
 ##  Dependencies
 * [gosu '0.7.43'](https://github.com/jlnr/gosu)

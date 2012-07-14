@@ -1,2 +1,6 @@
 # don't version gem files
 /*.gem
+
+# don't version gem publish files
+/vendor
+/pkg

@@ -6,7 +6,6 @@
 * Audio
 * Tweenings & juice
 * Make a super cute awesome kawaii logo
-* gem commands
 * Platform example game
 
 ## Working on
@@ -24,3 +23,4 @@
 * Scene management
 * Input
 * Tiled maps usage
+* gem commands
