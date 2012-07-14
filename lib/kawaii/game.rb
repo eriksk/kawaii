@@ -45,9 +45,16 @@ module Kawaii
     end
     
     def update
+      if self.class.method_defined? :before_update
+        before_update
+      end
+
       @dt = delta()
       @node_manager.update @dt
-      update_game
+
+      if self.class.method_defined? :after_update
+        after_update
+      end
     end
   
     def delta

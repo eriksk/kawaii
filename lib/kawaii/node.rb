@@ -41,12 +41,13 @@ module Kawaii
         @velocity.x += @gravity.x * dt
         @velocity.y += @gravity.y * dt
         @position.x += @velocity.x * dt
-        @position.y += @velocity.y * dt
-        @children.each do |child|
-          child.update dt
-        end
+        @position.y += @velocity.y * dt  
       end
-   
+      
+      @children.each do |child|
+        child.update dt
+      end
+
       if self.class.method_defined? :after_update
         after_update dt
       end

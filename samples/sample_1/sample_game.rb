@@ -19,11 +19,12 @@ class Game < Kawaii::Game
     @tile_map = Kawaii::TmxTileMap.new
     @tile_map.load "content/maps/map1.json", @content_manager
 
-    enemies = Kawaii::Node.new
+    enemies = Kawaii::Node.new(true)
     enemy_count = 20
     enemy_count.times do |i|
       enemy = Enemy.new @content_manager.load_image "gfx/ball.png"
       enemy.position.x = Kawaii::lerp(0, WIDTH, i / enemy_count.to_f) + 32
+      enemy.gravity.y = 0
       enemies.add_child enemy
     end
     add_child enemies
@@ -37,8 +38,8 @@ class Game < Kawaii::Game
     end
   end
 
-  def update_game
-    input    
+  def before_update
+    input
   end
 
   def before_draw
