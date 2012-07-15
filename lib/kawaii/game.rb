@@ -4,10 +4,11 @@ require 'yaml'
 module Kawaii
   class Game < Gosu::Window
   
-    attr_accessor :width, :height, :fullscreen, :show_fps, :font, :content_root
-    # TODO: should load from running directory, not for this actual file? DOES NOT WORK, yet...
-    CONFIG = YAML.load_file(File.dirname(__FILE__) +'config.yml') if File.exist?(File.dirname(__FILE__) + 'config.yml')
+    CONFIG_PATH = File.expand_path(".") +'/config.yml'
+    CONFIG = YAML.load_file(CONFIG_PATH) if File.exist?(CONFIG_PATH)
 
+    attr_accessor :width, :height, :fullscreen, :show_fps, :font, :content_root
+      
     def initialize
       super CONFIG['resolution']['width'], CONFIG['resolution']['height'], CONFIG['fullscreen']
       @width, @height, @fullscreen = CONFIG['resolution']['width'], CONFIG['resolution']['height'], CONFIG['fullscreen']

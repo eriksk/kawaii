@@ -69,7 +69,7 @@ game.show
 				end
 
 				# write config file
-				File.open("config.rb", "w+") do |f|
+				File.open("config.yml", "w+") do |f|
 					f.write <<-EOF
 # kawaii configuration
 resolution:
