@@ -17,6 +17,7 @@ require_relative 'kawaii/constants'
 require_relative 'kawaii/scene_manager'
 require_relative 'kawaii/scene'
 require_relative 'kawaii/helpers'
+require_relative 'kawaii/camera'
 
 module Kawaii
 end

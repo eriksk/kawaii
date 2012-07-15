@@ -21,10 +21,13 @@ module Kawaii
 		it "should contain properties" do
 			@tile_map.should respond_to :properties
 		end
+		it "should contain tilesets" do
+			@tile_map.should respond_to :tilesets
+		end
 
 		describe "#load" do
 			it "should be able to load a tmx.json file" do
-				@tile_map.load('/Users/ILab/Documents/ruby/kawaii/spec/kawaii/content/maps/test_map.json')
+				@tile_map.load('content/maps/test_map.json')
 				@tile_map.width.should == 32
 				@tile_map.height.should == 32
 				@tile_map.layers.size.should be(1)

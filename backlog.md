@@ -1,7 +1,6 @@
 # Kawaii backlog
 
 ## Next up
-* Camera
 * Animated entities/sprites
 * Audio
 * Tweenings & juice
@@ -11,6 +10,7 @@
 ## Working on
 * <del>Physics integration w/ chipmunk</del> (paused, need more graphics to test)
 * Vectors/Math
+* Camera
 
 ## Completed
 * Tiled importer

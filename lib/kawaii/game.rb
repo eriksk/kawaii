@@ -16,6 +16,9 @@ module Kawaii
       @input_manager = Kawaii::InputManager.new(self)
       @physics_manager = Kawaii::PhysicsManager.new
 
+      # cam
+      @cam = Kawaii::Camera.new(self)
+
       # stats
       @top_color = Gosu::Color.new(0xFF1EB1FA)
       @bottom_color = Gosu::Color.new(0xFF1D4DB5)
@@ -70,6 +73,9 @@ module Kawaii
 
     def after_draw
     end
+    
+    def draw_hud
+    end
 
     def draw
       draw_quad(
@@ -78,12 +84,16 @@ module Kawaii
         @width, @height, @bottom_color,
         0, @height, @bottom_color,
       )
-      before_draw
-      @node_manager.draw
-      if @debug
-        @font.draw("FPS: #{get_fps}", 14, 14, 0)
+      @cam.translate do 
+        before_draw
+        @node_manager.draw  
+        after_draw
       end
-      after_draw
+      
+      draw_hud
+      if @debug
+          @font.draw("FPS: #{get_fps}", 14, 14, 0)
+      end
     end 
   end
 end

@@ -8,6 +8,7 @@ module Kawaii
 		def initialize
 			@layers = []
 			@properties = {}
+			@tilesets = []
 		end
 
 		def draw
@@ -20,7 +21,7 @@ module Kawaii
 			if path.end_with? ".json"
 				load_json path
 				@layers.each do |layer|
-					layer.textures = content_manager.load_tiled_images("gfx/map1.png", 32)
+					layer.textures = content_manager.load_tiled_images(@tilesets.first.gsub(/\.\.\//, ""), 32)
 				end
 			else
 				raise UnsupportedFormatError, "only json is supported"
@@ -46,7 +47,7 @@ module Kawaii
 			end
 		end
 
-		private
+		protected
 			def load_json path
 				File.open(path) do |f|
 					populate JSON.parse(f.read)
@@ -64,6 +65,9 @@ module Kawaii
 				end
 				hash['properties'].each do |property|
 					@properties[property['key']] = property['value']
+				end
+				hash['tilesets'].each do|tileset|
+					@tilesets.push tileset['image']
 				end
 			end
 	end
