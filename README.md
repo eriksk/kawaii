@@ -1,5 +1,6 @@
 # Kawaii <3
 
+[Change log](https://github.com/eriksk/kawaii/blob/master/changelog.md)
 [Feature list and development progress](https://github.com/eriksk/kawaii/blob/master/backlog.md)
 
 ## What is Kawaii?
