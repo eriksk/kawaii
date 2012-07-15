@@ -1,14 +1,17 @@
 require 'gosu'
+require 'yaml'
 
 module Kawaii
   class Game < Gosu::Window
   
     attr_accessor :width, :height, :fullscreen, :show_fps, :font, :content_root
-  
-    def initialize width = 800, height = 600, fullscreen = false, content_root = "content", debug = true
-      super width, height, fullscreen
-      @width, @height, @fullscreen = width, height, fullscreen    
-      @content_root = content_root
+    # TODO: should load from running directory, not for this actual file? DOES NOT WORK, yet...
+    CONFIG = YAML.load_file(File.dirname(__FILE__) +'config.yml') if File.exist?(File.dirname(__FILE__) + 'config.yml')
+
+    def initialize
+      super CONFIG['resolution']['width'], CONFIG['resolution']['height'], CONFIG['fullscreen']
+      @width, @height, @fullscreen = CONFIG['resolution']['width'], CONFIG['resolution']['height'], CONFIG['fullscreen']
+      @content_root = CONFIG['content_root']
       
       @scene_manager = Kawaii::SceneManager.new(self) 
       # load intro scene
@@ -18,7 +21,7 @@ module Kawaii
       @top_color = Gosu::Color.new(0xFF1EB1FA)
       @bottom_color = Gosu::Color.new(0xFF1D4DB5)
       @font = Gosu::Font.new(self, Gosu::default_font_name, 18)
-      @debug = debug
+      @debug = CONFIG['debug']
       
       if @debug
         puts "Game settings:"

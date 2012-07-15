@@ -1,0 +1,12 @@
+# kawaii configuration
+resolution:
+  width: 800
+  height: 600
+fullscreen: false
+show_fps: false
+content_root: content
+debug: true
+fade_color: 0xFFFFFF
+default_gravity:
+  x: 0
+  y: 0

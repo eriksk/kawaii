@@ -34,51 +34,51 @@ module Kawaii
 
 		private
 			def self.new_game_template args
-				width = 800
-				height = 600
-				fullscreen = false
 				game_class_name = args.first.capitalize 
 				File.open(args.first + ".rb", "w+") do |f|
 					f.write <<-EOF
 require 'kawaii'
 
-class #{game_class_name} < Kawaii::Game
-  
-  WIDTH = #{width}
-  HEIGHT = #{height}
-  FULLSCREEN = #{fullscreen}
-  CONTENT_ROOT = "content"
-  
-  def initialize
-    super WIDTH, HEIGHT, FULLSCREEN, CONTENT_ROOT
-    load_game
-  end
-  
-  def load_game
-  	# TODO: load code goes here	
-  end
+module #{game_class_name}
+	class Game < Kawaii::Game
+	  
+	  def initialize
+	    super
+	    load_game
+	  end
+	  
+	  def load_game
+	  	# TODO: create and load a scene
+	  	# example:	
+	    # @scene_manager.on_scene_activated lambda {
+	   	#	  @scene_manager.push_scene(MySceneClass.new(@scene_manager)) 
+	    # }	    	
+	  end
 
-  def input
-  	# TODO: input goes here
-    if button_down?Gosu::KbEscape
-      exit
-    end  
-  end
-
-  def before_update
-  	# TODO: game logic goes here
-    input
-  end
-
-  def after_update
-  	# TODO: game logic goes here	
-  end
+	  def before_update
+	  	# allows the game to exit
+	    exit() if @input.button_down?(Gosu::KbEscape)
+	  end
+	end
 end
 
 # entry point
-game = #{game_class_name}.new
+game = #{game_class_name}::Game.new
 game.show
 				EOF
+				end
+
+				# write config file
+				File.open("config.rb", "w+") do |f|
+					f.write <<-EOF
+# kawaii configuration
+resolution:
+  width: 800
+  height: 600
+fullscreen: false
+content_root: content
+debug: true
+					EOF
 				end
 
 				puts "Successfully created new game '#{game_class_name}'".green
