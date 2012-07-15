@@ -57,7 +57,7 @@ module #{game_class_name}
 
 	  def before_update
 	  	# allows the game to exit
-	    exit() if @input.button_down?(Gosu::KbEscape)
+	    exit() if button_down?(Gosu::KbEscape)
 	  end
 	end
 end
