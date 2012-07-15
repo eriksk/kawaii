@@ -1,13 +1,13 @@
 # Kawaii backlog
 
 ## Next up
-* Audio
+* Physics integration with chipmunk
 * Tweenings & juice
 * Platform example game
 * Create a few video tutorials on how to use Kawaii
+* Audio
 
 ## Working on
-* Physics integration with chipmunk
 * Animated entities/sprites
 
 ## Completed
@@ -27,3 +27,5 @@
 * Camera
 * Vectors/Math
 * Config file
+* Real delta time
+* Target framerate (added to config file)

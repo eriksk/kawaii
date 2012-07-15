@@ -77,6 +77,7 @@ resolution:
   height: 600
 fullscreen: false
 content_root: content
+target_fps: 60
 debug: true
 					EOF
 				end

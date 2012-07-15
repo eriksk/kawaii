@@ -22,7 +22,7 @@ module Kawaii
 				@rotation = Kawaii::clerp(@rotation, 0, (current - dead_zone) / ((duration - dead_zone) * 1.4))
 				@scale = Kawaii::clerp(@scale, 0, (current - dead_zone) / ((duration - dead_zone) * 1.4))
 				@position.x = Kawaii::clerp(game().width / 2, game().width + 400, (current - dead_zone) / ((duration - dead_zone) * 1.3))
-				@position.y += 5
+				@position.y += Math::sin(current * 0.01) * 30.0
 				@color.alpha = Kawaii::clerp(0, 255, (current - dead_zone) / ((duration - dead_zone)))
 			end
 		end
