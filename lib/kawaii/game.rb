@@ -10,7 +10,9 @@ module Kawaii
       @width, @height, @fullscreen = width, height, fullscreen    
       @content_root = content_root
       
-      @scene_manager = Kawaii::SceneManager.new(self)
+      @scene_manager = Kawaii::SceneManager.new(self) 
+      # load intro scene
+      @scene_manager.push_scene Kawaii::Intro.new @scene_manager
 
       # stats
       @top_color = Gosu::Color.new(0xFF1EB1FA)

@@ -21,6 +21,13 @@ module Kawaii
 			@state = :transition
 		end
 
+		# removes the current scene
+		def pop_scene
+			@state = :none
+			@old_scene = nil
+			@scene = nil
+		end
+
 		def on_scene_activated(lmbda)
 			@on_scene_activated << lmbda
 		end

@@ -6,8 +6,8 @@ module Kawaii
 			@rotation = 0
 			@position = Vector2.new(game().width / 2, game().height / 2)
 			@scale = 1
-			@transition_duration = 1800
-			@color = Gosu::Color::BLACK
+			@transition_duration = 2500
+			@color = Gosu::Color::WHITE
 			@color.alpha = 0
 		end
 
@@ -19,9 +19,11 @@ module Kawaii
 				@scale = Kawaii::clerp(0.1, 1.0, current / (fake_duration * 0.8))
 			elsif current <= dead_zone
 			else
-				@rotation += Kawaii::clerp(0, 360, (current - dead_zone) / (duration - dead_zone))
+				@rotation = Kawaii::clerp(@rotation, 0, (current - dead_zone) / ((duration - dead_zone) * 1.4))
+				@scale = Kawaii::clerp(@scale, 0, (current - dead_zone) / ((duration - dead_zone) * 1.4))
 				@position.x = Kawaii::clerp(game().width / 2, game().width + 400, (current - dead_zone) / ((duration - dead_zone) * 1.3))
-				@color.alpha = Kawaii::lerp(0, 255, (current - dead_zone) / ((duration - dead_zone)))
+				@position.y += 5
+				@color.alpha = Kawaii::clerp(0, 255, (current - dead_zone) / ((duration - dead_zone)))
 			end
 		end
 
