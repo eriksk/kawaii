@@ -9,7 +9,6 @@
 ## Working on
 * Physics integration with chipmunk
 * Animated entities/sprites
-* Config file
 
 ## Completed
 * Make a super cute awesome kawaii logo
@@ -27,3 +26,4 @@
 * gem commands
 * Camera
 * Vectors/Math
+* Config file

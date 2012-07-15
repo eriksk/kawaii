@@ -16,6 +16,8 @@ And then run the following command
 
 This will create a new basic game with a default resolution set to 800 x 600.
 
+To change the configuration for the game simply edit the config.yml file that is created along with the game file. The config file itself is rather self-explanatory.
+
 ## Why does Kawaii exist?
 I wanted a way of quickly prototyping games for iPhone and iPad without Objective-C. Being pretty comfy with Ruby, I thought, why not!? 
 
