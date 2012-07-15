@@ -18,6 +18,7 @@ require_relative 'kawaii/scene_manager'
 require_relative 'kawaii/scene'
 require_relative 'kawaii/helpers'
 require_relative 'kawaii/camera'
+require_relative 'kawaii/intro'
 
 module Kawaii
 end

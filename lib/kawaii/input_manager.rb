@@ -12,6 +12,10 @@ module Kawaii
 			@old_mouse_y = 0.0
 		end
 
+		def bind buttons = []
+			@bound_buttons = buttons
+		end
+
 		def update
 			@buttons.clear
 			@bound_buttons.each do |btn|

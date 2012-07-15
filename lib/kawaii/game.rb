@@ -3,21 +3,14 @@ require 'gosu'
 module Kawaii
   class Game < Gosu::Window
   
-    attr_accessor :width, :height, :fullscreen, :show_fps, :font, :node_manager, :content_manager, :physics_manager
+    attr_accessor :width, :height, :fullscreen, :show_fps, :font, :content_root
   
     def initialize width = 800, height = 600, fullscreen = false, content_root = "content", debug = true
       super width, height, fullscreen
       @width, @height, @fullscreen = width, height, fullscreen    
+      @content_root = content_root
       
-      # managers
-      @node_manager = Kawaii::NodeManager.new
-      @content_manager = Kawaii::ContentManager.new(self, content_root)  
-      @audio_manager = Kawaii::AudioManager.new(self)
-      @input_manager = Kawaii::InputManager.new(self)
-      @physics_manager = Kawaii::PhysicsManager.new
-
-      # cam
-      @cam = Kawaii::Camera.new(self)
+      @scene_manager = Kawaii::SceneManager.new(self)
 
       # stats
       @top_color = Gosu::Color.new(0xFF1EB1FA)
@@ -30,36 +23,18 @@ module Kawaii
         puts "\tResolution: #{width}:#{height}"
         puts "\tFullscreen: #{fullscreen}"
         puts "\tContent root: #{content_root}"
-        print_stats
-      end
-    end
-    
-    def add_child node
-      @node_manager.nodes.push node
-    end
-    
-    def remove_child node
-      @node_manager.nodes.delete node
-    end
-    
-    def print_stats
-      puts "Statistics:"
-      puts "Nodes: #{node_manager.count}"
-    end
-    
-    def update
-      if self.class.method_defined? :before_update
-        before_update
-      end
-
-      @dt = delta()
-      @node_manager.update @dt
-
-      if self.class.method_defined? :after_update
-        after_update
       end
     end
   
+    def update
+      before_update()
+      @dt = delta()
+      @scene_manager.update @dt
+    end
+    
+    def before_update
+    end
+
     def delta
       16.0 # TODO: real delta
     end
@@ -68,15 +43,6 @@ module Kawaii
       1000.0 / delta
     end
   
-    def before_draw
-    end
-
-    def after_draw
-    end
-    
-    def draw_hud
-    end
-
     def draw
       draw_quad(
         0, 0, @top_color,
@@ -84,13 +50,7 @@ module Kawaii
         @width, @height, @bottom_color,
         0, @height, @bottom_color,
       )
-      @cam.translate do 
-        before_draw
-        @node_manager.draw  
-        after_draw
-      end
-      
-      draw_hud
+      @scene_manager.draw
       if @debug
           @font.draw("FPS: #{get_fps}", 14, 14, 0)
       end
