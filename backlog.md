@@ -1,16 +1,14 @@
 # Kawaii backlog
 
 ## Next up
-* Animated entities/sprites
 * Audio
 * Tweenings & juice
 * Make a super cute awesome kawaii logo
 * Platform example game
 
 ## Working on
-* <del>Physics integration w/ chipmunk</del> (paused, need more graphics to test)
-* Vectors/Math
-* Camera
+* Physics integration with chipmunk
+* Animated entities/sprites
 
 ## Completed
 * Tiled importer
@@ -24,3 +22,5 @@
 * Input
 * Tiled maps usage
 * gem commands
+* Camera
+* Vectors/Math
