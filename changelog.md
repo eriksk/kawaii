@@ -3,6 +3,7 @@
 ## 0.1.2 (not released)
 * Real delta time (why this wasn't implemented already I do not know...)
 * Target framerate (added to config file)
+* Automatic fade transitions and generally better scene management
 
 ## 0.1.1
 * New scripts for creating basic game

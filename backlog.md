@@ -9,6 +9,7 @@
 
 ## Working on
 * Animated entities/sprites
+* Flip sprites
 
 ## Completed
 * Make a super cute awesome kawaii logo

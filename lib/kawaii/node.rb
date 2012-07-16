@@ -10,6 +10,7 @@ module Kawaii
       @velocity = velocity
       @gravity = gravity
       @static = static
+      @update_hooks = []
     end
     
     def count
@@ -31,6 +32,12 @@ module Kawaii
     def has_children?
       @children.size > 0
     end
+
+    # adds a lambda to be called on every update
+    # dt is passed as a parameter
+    def add_update_hook(lmbda)
+      @update_hooks << lmbda
+    end
   
     def update dt
       if self.class.method_defined? :before_update
@@ -50,6 +57,10 @@ module Kawaii
 
       if self.class.method_defined? :after_update
         after_update dt
+      end
+
+      @update_hooks.each do |hook|
+        hook.call(dt)
       end
     end
   
