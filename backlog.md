@@ -8,7 +8,6 @@
 * Audio
 
 ## Working on
-* Animated entities/sprites
 * Flip sprites
 
 ## Completed
@@ -30,3 +29,4 @@
 * Config file
 * Real delta time
 * Target framerate (added to config file)
+* Animated entities/sprites

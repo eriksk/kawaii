@@ -66,11 +66,9 @@ module Kawaii
 			def goto_next_scene
 				@scene = @next_scene
 				@next_scene = nil
-				puts "Current scene: #{@scene}"
 			end
 
 			def on_transitioned_in
-				puts "Transitioned in done..."
 				@state = :none
 				@current_transition = 0.0
 				@on_scene_activated.each do |l|
@@ -81,7 +79,6 @@ module Kawaii
 			end
 
 			def on_transitioned_out
-				puts "Transitioned out done..."
 				goto_next_scene()
 				@current_transition = 0.0
 				@state = :transition_in
@@ -92,7 +89,6 @@ module Kawaii
 				@current_transition = 0.0
 				@state = :transition_in
 				goto_next_scene()
-				puts "no old scene, go directly to the new scene"
 			end
 	end
 end
