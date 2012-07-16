@@ -18,6 +18,9 @@ module Kawaii
 			# set default duration
 			@transition_duration = SCENE_TRANSITION_DURATION
 
+			@color = Gosu::Color::WHITE
+			@color.alpha = 0
+
 			load()
 		end
 
@@ -61,13 +64,20 @@ module Kawaii
 	    end
 
 	    def draw
-	      @cam.translate do 
-	        before_draw
-	        @node_manager.draw  
-	        after_draw
-	      end
+			@cam.translate do 
+				before_draw
+				@node_manager.draw  
+				after_draw
+			end
 	      
-	      draw_hud
+	      	draw_hud
+
+			game.draw_quad(
+				0, 0, @color,
+				game.width, 0, @color,
+				game.width, game.height, @color,
+				0, game.height, @color,
+			)
 	    end
 	end
 end

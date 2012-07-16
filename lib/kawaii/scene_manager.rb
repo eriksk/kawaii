@@ -5,26 +5,24 @@ module Kawaii
 		def initialize game, scene = nil
 			@game = game
 			@scene = scene
-			@old_scene = nil
+			@next_scene = nil
 			@current_transition = 0.0
-			@state = :none
-			@state = :transition if @scene != nil
+			@state = :transition_out if @scene != nil
 			@on_scene_activated = []
 		end
 
 		# switches to a new scene and loads it
 		def push_scene scene
-			@old_scene = @scene
-			@scene = scene		
-			@scene.load
+			@next_scene = scene		
+			@next_scene.load
 			@current_transition = 0.0
-			@state = :transition
+			@state = :transition_out
 		end
 
 		# removes the current scene
 		def pop_scene
 			@state = :none
-			@old_scene = nil
+			@next_scene = nil
 			@scene = nil
 		end
 
@@ -36,39 +34,65 @@ module Kawaii
 			case @state
 				when :none
 					@scene.update dt
-				when :transition
-					if @scene != nil
+				when :transition_in
+					if @scene
 						@scene.transition_in @current_transition, @scene.transition_duration
 					end
-					if @old_scene != nil
-						@old_scene.transition_out @current_transition, @old_scene.transition_duration
-					end
-
 					@current_transition += dt
 					if @current_transition > @scene.transition_duration
-						@state = :transition_done
-						@current_transition = 0.0
-						@on_scene_activated.each do |l|
-							l.call()
-						end
-						# remove jobs
-						@on_scene_activated.clear
+						on_transitioned_in()
 					end
-				when :transition_done
-					@current_transition = 0.0
-					@old_scene = nil
-					@state = :none
+				when :transition_out
+					if @scene
+						@scene.transition_out @current_transition, @scene.transition_duration
+						@current_transition += dt
+						if @current_transition > @scene.transition_duration
+							on_transitioned_out()
+						end
+					else
+						on_no_scene()
+					end
 				else
 			end
 		end
 
 		def draw
-			if @old_scene != nil
-				@old_scene.draw
-			end
-			if @scene != nil
+			if @scene
 				@scene.draw
 			end
 		end
+
+		private
+			def goto_next_scene
+				@scene = @next_scene
+				@next_scene = nil
+				puts "Current scene: #{@scene}"
+			end
+
+			def on_transitioned_in
+				puts "Transitioned in done..."
+				@state = :none
+				@current_transition = 0.0
+				@on_scene_activated.each do |l|
+					l.call()
+				end
+				# remove jobs
+				@on_scene_activated.clear
+			end
+
+			def on_transitioned_out
+				puts "Transitioned out done..."
+				goto_next_scene()
+				@current_transition = 0.0
+				@state = :transition_in
+			end
+
+			def on_no_scene
+				# no old scene, go directly to the new scene
+				@current_transition = 0.0
+				@state = :transition_in
+				goto_next_scene()
+				puts "no old scene, go directly to the new scene"
+			end
 	end
 end

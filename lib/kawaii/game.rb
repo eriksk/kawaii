@@ -19,8 +19,8 @@ module Kawaii
       @scene_manager.push_scene Kawaii::Intro.new @scene_manager
 
       # stats
-      @top_color = Gosu::Color::WHITE
-      @bottom_color = Gosu::Color::WHITE
+      @top_color = Gosu::Color::BLACK
+      @bottom_color = Gosu::Color::BLACK
       @font = Gosu::Font.new(self, Gosu::default_font_name, 18)
       @debug = CONFIG['debug']
       

@@ -16,7 +16,8 @@ module Kawaii
 		end
 
 		def translate(&block)
-			@game.translate(@pos.x, @pos.y) do
+			# ignore sub-pixel positioning, only integers
+			@game.translate(@pos.x.to_i, @pos.y.to_i) do
 				block.call()
 			end
 		end
