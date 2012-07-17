@@ -19,4 +19,19 @@ module Kawaii
 
 		(a0*mu*mu2+a1*mu2+a2*mu+a3)
 	end
+
+	# extension helpers
+	class Numeric 
+	  def degrees_to_radians
+	    (self - 90) * Math::PI / 180.0
+	  end
+	  
+	  def radians_to_degrees
+	    self * 180.0 / Math::PI + 90
+	  end
+	  
+	  def to_vector_2
+	    CP::Vec2.new(Math::cos(self), Math::sin(self))
+	  end
+	end
 end

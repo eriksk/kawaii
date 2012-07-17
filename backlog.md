@@ -1,13 +1,13 @@
 # Kawaii backlog
 
 ## Next up
-* Physics integration with chipmunk
 * Tweenings & juice
 * Platform example game
 * Create a few video tutorials on how to use Kawaii
 * Audio
 
 ## Working on
+* Physics integration with chipmunk
 * Flip sprites
 
 ## Completed

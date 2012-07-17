@@ -7,6 +7,7 @@ module Kawaii
 			@scene = scene
 			@next_scene = nil
 			@current_transition = 0.0
+			@state = :none
 			@state = :transition_out if @scene != nil
 			@on_scene_activated = []
 		end
@@ -33,7 +34,9 @@ module Kawaii
 		def update dt
 			case @state
 				when :none
-					@scene.update dt
+					if @scene
+						@scene.update dt
+					end
 				when :transition_in
 					if @scene
 						@scene.transition_in @current_transition, @scene.transition_duration
