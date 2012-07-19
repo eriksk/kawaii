@@ -6,7 +6,7 @@ module Kawaii
 			@rotation = 0
 			@position = Vector2.new(game().width / 2, game().height / 2)
 			@scale = 1
-			@transition_duration = 2000
+			@transition_duration = 100 # TODO: should be 2000
 			@color = Gosu::Color::WHITE
 			@color.alpha = 0
 		end

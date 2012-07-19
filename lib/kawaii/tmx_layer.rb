@@ -15,6 +15,19 @@ module Kawaii
 			@textures = nil
 		end
 
+		# calls a block for every cell that is not 0.
+		# params: col, row
+		def each_collidable(&blk)
+			@width.times do |i|
+				@height.times do |j|
+					cell = get_cell(i, j)
+					if cell != 0
+						blk.call(i, j)
+					end
+				end
+			end
+		end
+
 		def get_cell col, row
 			#puts "Getting cell w col:#{col} and row: #{row} and it has the value #{@data[col + row * @width]}"
 			#puts @data

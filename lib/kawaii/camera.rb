@@ -15,9 +15,13 @@ module Kawaii
 			@pos.y = Kawaii::lerp(@pos.y, @destination.y, @speed)	
 		end
 
+		def set_position x, y
+			@pos.x, @pos.y = x, y
+		end
+
 		def translate(&block)
 			# ignore sub-pixel positioning, only integers
-			@game.translate(@pos.x.to_i, @pos.y.to_i) do
+			@game.translate(-@pos.x.to_i, -@pos.y.to_i) do
 				block.call()
 			end
 		end

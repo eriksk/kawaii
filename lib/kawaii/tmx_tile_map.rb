@@ -12,16 +12,16 @@ module Kawaii
 		end
 
 		def draw
-			@layers.each do |layer|
-				layer.draw
-			end
+			#@layers.each do |layer|
+				@layers.last.draw
+			#end
 		end
 
 		def load path, content_manager
 			if path.end_with? ".json"
 				load_json path
 				@layers.each do |layer|
-					layer.textures = content_manager.load_tiled_images(@tilesets.first.gsub(/\.\.\//, ""), 32)
+					layer.textures = content_manager.load_tiled_images(@tilesets.first.gsub(/\.\.\//, ""), 32) # TODO: don't hard code cell size
 				end
 			else
 				raise UnsupportedFormatError, "only json is supported"
