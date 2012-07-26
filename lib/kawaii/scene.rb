@@ -10,6 +10,7 @@ module Kawaii
 			@content = Kawaii::ContentManager.new(scene_manager.game, scene_manager.game.content_root)  
 			@audio = Kawaii::AudioManager.new(scene_manager.game)
 			@input = Kawaii::InputManager.new(scene_manager.game)
+			@physics = Kawaii::PhysicsManager.new
 
 			# cam
 			@cam = Kawaii::Camera.new(scene_manager.game)
@@ -23,21 +24,17 @@ module Kawaii
 			load()
 		end
 
-		def physics
-			@physics ||= Kawaii::PhysicsManager.new
-		end
-
 		def add_child node
 			@node_manager.nodes.push node
 			if node.respond_to?(:physics)
-				physics.add_physics_entity(node)
+				@physics.add_physics_entity(node)
 			end
 		end
 
 		def remove_child node
 			@node_manager.nodes.delete node
 			if node.respond_to?(:physics)
-				physics.remove_physics_entity(node)
+				@physics.remove_physics_entity(node)
 			end
 		end
 
@@ -57,9 +54,9 @@ module Kawaii
 		def update dt
 			@input.update
 			before_update()
-      		@node_manager.update dt
-      		@physics.update dt
-      		after_update()
+      @node_manager.update dt
+      @physics.update dt
+      after_update()
 		end
 
 		def before_update
