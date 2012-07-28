@@ -4,3 +4,7 @@
 # don't version gem publish files
 /vendor
 /pkg
+
+# dont version docs
+/doc
+./yardoc
